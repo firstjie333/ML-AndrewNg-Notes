@@ -60,21 +60,21 @@
 
 
 ## 1.3 监督学习(Supervised Learning)
-监督学习，即为教计算机如何去完成预测任务（有反馈），预先给一定数据量的输入**和对应的结果**即训练集，建模拟合，最后让计算机预测未知数据的结果。
+监督学习，即为教计算机如何去完成预测任务==（有反馈）==，预先给一定数据量的输入**和对应的结果**即训练集，建模拟合，最后让计算机预测未知数据的结果。
 
 监督学习一般有两种：
 
-1. 回归问题(Regression)
+1. ==回归问题(Regression)==
 
-   回归问题即为预测一系列的**连续值**。
+   ==回归问题即为预测一系列的**连续值**。==
 
    在房屋价格预测的例子中，给出了一系列的房屋面基数据，根据这些数据来预测任意面积的房屋价格。给出照片-年龄数据集，预测给定照片的年龄。
 
    ![](images/20180105_194712.png)
 
-2. 分类问题(Classification)
+2. ==分类问题(Classification)==
 
-   分类问题即为预测一系列的**离散值**。
+   ==分类问题即为预测一系列的**离散值**。==
 
    即根据数据预测被预测对象属于哪个分类。
 
@@ -158,11 +158,11 @@ $h_\theta(x)=\theta_0+\theta_1x$，为解决房价问题的一种可行表达式
 >
 > 吴恩达(Andrew Ng)老师在其公开课中对两者做了细分。**如果要听他的课做作业，不细分这两个概念是会被打小手扣分的**！这也可能是因为老师发现了业内混用的乱象，想要治一治吧。
 >
-> **损失函数**(Loss/Error Function): 计算**单个**样本的误差。[link](https://www.coursera.org/learn/neural-networks-deep-learning/lecture/yWaRd/logistic-regression-cost-function)
+> ==**损失函数**(Loss/Error Function): 计算**单个**样本的误差==  [link](https://www.coursera.org/learn/neural-networks-deep-learning/lecture/yWaRd/logistic-regression-cost-function)
 >
-> **代价函数**(Cost Function): 计算整个训练集**所有损失函数之和的平均值**
+> ==代价函数(Cost Function): 计算整个训练集所有损失函数之和的平均值==
 >
-> 
+>
 >
 > 综合考虑，本笔记对两者概念进行细分，若有所谬误，欢迎指正。
 >

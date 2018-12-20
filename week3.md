@@ -4,7 +4,7 @@
 
 ## 6.1 分类(Classification)
 
-在分类问题中，预测的结果是离散值（结果是否属于某一类），逻辑回归算法(Logistic Regression)被用于解决这类分类问题。
+在分类问题中，预测的结果是==离散值==（结果是否属于某一类），==逻辑回归算法(Logistic Regression)==被用于解决这类分类问题。
 
 - 垃圾邮件判断
 - 金融欺诈判断
@@ -32,7 +32,7 @@ $h_\theta(x) \lt 0.5$ ，预测为 $y = 0$，即负向类。
 
 
 
-区别于线性回归算法，逻辑回归算法是一个分类算法，**其输出值永远在 0 到 1 之间**，即 $h_\theta(x) \in (0,1)$。
+==区别于线性回归算法，逻辑回归算法是一个分类算法，**其输出值永远在 0 到 1 之间**，即 $h_\theta(x) \in (0,1)$。==
 
 ## 6.2 假设函数表示(Hypothesis Representation)
 
@@ -50,7 +50,7 @@ $$
 
 应用 sigmoid 函数，则逻辑回归模型：$$h_{\theta}(x)=g(\theta^Tx) =\frac{1}{1+e^{-\theta^Tx}}$$
 
-逻辑回归模型中，$h_\theta \left( x \right)$ 的作用是，根据输入 $x$ 以及参数 $\theta$，计算得出”输出 $y=1$“的可能性(estimated probability)，概率学中表示为：
+==逻辑回归模型中，$h_\theta \left( x \right)$ 的作用是，根据输入 $x$ 以及参数 $\theta$，计算得出”输出 $y=1$“的可能性(estimated probability)，概率学中表示为：==
 
 $\begin{align*}& h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline & P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align*}$
 
