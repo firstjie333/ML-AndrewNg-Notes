@@ -40,7 +40,7 @@ $h_\theta(x) \lt 0.5$ ，预测为 $y = 0$，即负向类。
 $$
 h_\theta \left( x \right)=g(z)=g\left(\theta^{T}x \right)
 $$
-对比线性回归函数 $h_\theta \left( x \right)=\theta^{T}x$，$g$ 表示逻辑函数([logistic function][1])，复合起来，则称为逻辑回归函数。
+==对比线性回归函数 $h_\theta \left( x \right)=\theta^{T}x$，$g$ 表示逻辑函数([logistic function][1])，复合起来，则称为逻辑回归函数。==
 
 逻辑函数是 S 形函数，会将所有实数映射到 $(0, 1)$ 范围。
 
@@ -80,7 +80,7 @@ $\begin{align*}& h_\theta(x) \geq 0.5 \rightarrow y = 1 \newline& h_\theta(x) < 
 
 同线性回归模型的不同点在于： $\begin{align*}z \to +\infty, e^{-\infty} \to 0 \Rightarrow g(z)=1 \newline z \to -\infty, e^{\infty}\to \infty \Rightarrow g(z)=0 \end{align*}$
 
-直观一点来个例子，${h_\theta}\left( x \right)=g\left( {\theta_0}+{\theta_1}{x_1}+{\theta_{2}}{x_{2}}\right)​$ 是下图模型的假设函数：
+直观一点来个例子，${h_\theta}\left( x \right)=g\left( {\theta_0}+{\theta_1}{x_1}+{\theta_{2}}{x_{2}}\right)$ 是下图模型的假设函数：
 
 ![](images/20180111_000814.png)
 
@@ -106,7 +106,7 @@ ${h_\theta}\left( x \right)=g\left( {\theta_0}+{\theta_1}{x_1}+{\theta_{2}}{x_{2
 
 
 
-简单来说，决策边界就是**分类的分界线**，分类现在实际就由 $z$ (中的 $\theta$)决定啦。
+==简单来说，决策边界就是**分类的分界线**，分类现在实际就由 $z$ (中的 $\theta$)决定啦。==
 
 ## 6.4 代价函数(Cost Function)
 
@@ -118,7 +118,7 @@ ${h_\theta}\left( x \right)=g\left( {\theta_0}+{\theta_1}{x_1}+{\theta_{2}}{x_{2
 
 ![](images/20180111_080314.png)
 
-回忆线性回归中的平方损失函数，其是一个二次凸函数（碗状），二次凸函数的重要性质是只有一个局部最小点即全局最小点。上图中有许多局部最小点，这样将使得梯度下降算法无法确定收敛点是全局最优。
+**回忆线性回归中的平方损失函数，其是一个二次凸函数（碗状），二次凸函数的重要性质是只有一个局部最小点即全局最小点。**上图中有许多局部最小点，这样将使得梯度下降算法无法确定收敛点是全局最优。
 
 ![](images/20180111_080514.png)
 
@@ -138,7 +138,7 @@ $\begin{align*}& J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^
 
 区别于平方损失函数，对数损失函数也是一个凸函数，但没有局部最优值。
 
-## 6.5 简化的成本函数和梯度下降(Simplified Cost Function and Gradient Descent)
+## 6.5 简化的成本函数和梯度下降(Simplified Cost Function and Gradient Descent) ==不懂？？？==
 
 由于懒得分类讨论，对于二元分类问题，我们可把代价函数**简化**为一个函数： 
 $Cost\left( {h_\theta}\left( x \right),y \right)=-y\times log\left( {h_\theta}\left( x \right) \right)-(1-y)\times log\left( 1-{h_\theta}\left( x \right) \right)$
@@ -206,18 +206,19 @@ $\frac{\partial }{\partial {\theta_{j}}}J(\theta) = -\frac{1}{m}\sum\limits_{i=1
 
 我们编写代码给出代价函数及其偏导数然后传入梯度下降算法中，接下来算法则会为我们最小化代价函数给出参数的最优解。这类算法被称为**最优化算法(Optimization Algorithms)**，梯度下降算法不是唯一的最小化算法[^1]。
 
-一些最优化算法：
-- 梯度下降法(Gradient Descent)
-- 共轭梯度算法(Conjugate gradient)
-- 牛顿法和拟牛顿法(Newton's method & Quasi-Newton Methods)
-  - DFP算法
-  - 局部优化法(BFGS)
-  - 有限内存局部优化法(L-BFGS)
-- 拉格朗日乘数法(Lagrange multiplier)
+==一些最优化算法：==
+
+- ==梯度下降法(Gradient Descent)==
+- ==共轭梯度算法(Conjugate gradient)==
+- ==牛顿法和拟牛顿法(Newton's method & Quasi-Newton Methods)==
+  - ==DFP算法==
+  - ==局部优化法(BFGS)==
+  - ==有限内存局部优化法(L-BFGS)==
+- ==拉格朗日乘数法(Lagrange multiplier)==
 
 比较梯度下降算法：一些最优化算法虽然会更为复杂，难以调试，自行实现又困难重重，开源库又效率也不一，哎，做个调包侠还得碰运气。不过这些算法通常效率更高，并无需选择学习速率 $\alpha$（少一个参数少一份痛苦啊！）。
 
-Octave/Matlab 中对这类高级算法做了封装，易于调用。
+==**Octave/Matlab 中对这类高级算法做了封装，易于调用。**==
 
 
 
@@ -260,7 +261,7 @@ initialTheta = zeros(2,1);
 >
 > `exitFlag`: 标记代价函数是否收敛
 
-注：Octave/Matlab 中可以使用 `help fminunc` 命令随时查看函数的帮助文档。
+==注：Octave/Matlab 中可以使用 `help fminunc` 命令随时查看函数的帮助文档。==
 
 3. 返回结果
 
@@ -281,7 +282,7 @@ exitFlag = 1
 
 ![](images/20180112_001720.png)
 
-原理是，转化多类别分类问题为**多个二元分类问题**，这种方法被称为 One-vs-all。
+==原理是，转化多类别分类问题为**多个二元分类问题**，这种方法被称为 One-vs-all。==
 
 正式定义：$h_\theta^{\left( i \right)}\left( x \right)=p\left( y=i|x;\theta  \right), i=\left( 1,2,3....k \right)$
 
@@ -291,23 +292,30 @@ exitFlag = 1
 
 注意多类别分类问题中 $h_\theta(x)$ 的结果不再只是一个实数而是一个向量，如果类别总数为 $k$，现在 $h_\theta(x)$ 就是一个 $k$ 维向量。
 
-对于某个样本实例，需计算所有的 $k$ 种分类情况得到 $h_\theta(x)$，然后看分为哪个类别时预测输出的值最大，就说它输出属于哪个类别，即 $y = \mathop{\max}\limits_i\,h_\theta^{\left( i \right)}\left( x \right)$。
+==对于某个样本实例，需计算所有的 $k$ 种分类情况得到 $h_\theta(x)$，然后看分为哪个类别时预测输出的值最大，就说它输出属于哪个类别，即 $y = \mathop{\max}\limits_i\,h_\theta^{\left( i \right)}\left( x \right)$。==
+
+
+
+
+
+
 
 # 7 正则化(Regularization)
+
 ## 7.1 过拟合问题(The Problem of Overfitting)
 
 对于拟合的表现，可以分为三类情况：
-- **欠拟合(Underfitting)**
+- **==欠拟合(Underfitting)==**
 
-  无法很好的拟合训练集中的数据，预测值和实际值的误差很大，这类情况被称为欠拟合。拟合模型比较简单（特征选少了）时易出现这类情况。类似于，你上课不好好听，啥都不会，下课也差不多啥都不会。
+  无法很好的拟合训练集中的数据，**预测值和实际值的误差很大，这类情况被称为欠拟合**。拟合模型比较简单（特征选少了）时易出现这类情况。类似于，你上课不好好听，啥都不会，下课也差不多啥都不会。
 
-- **优良的拟合(Just right)**
+- **==优良的拟合(Just right)==**
 
   不论是训练集数据还是不在训练集中的预测数据，都能给出较为正确的结果。类似于，学霸学神！
 
-- **过拟合(Overfitting)**
+- **==过拟合(Overfitting)==**
 
-  能很好甚至完美拟合训练集中的数据，即 $J(\theta) \to 0$，但是对于不在训练集中的**新数据**，预测值和实际值的误差会很大，**泛化能力弱**，这类情况被称为过拟合。拟合模型过于复杂（特征选多了）时易出现这类情况。类似于，你上课跟着老师做题都会都听懂了，下课遇到新题就懵了不会拓展。
+  **能很好甚至完美拟合训练集中的数据，即 $J(\theta) \to 0$，但是对于不在训练集中的新数据，预测值和实际值的误差会很大，泛化能力弱，这类情况被称为过拟合。**拟合模型过于复杂（特征选多了）时易出现这类情况。类似于，你上课跟着老师做题都会都听懂了，下课遇到新题就懵了不会拓展。
 
 线性模型中的拟合情况(左图欠拟合，右图过拟合)：
 ![](images/20180112_091654.png)
@@ -320,20 +328,20 @@ exitFlag = 1
 
 为了度量拟合表现，引入：
 
-- 偏差(bias)
+- ==偏差(bias)==
 
-  指模型的预测值与真实值的**偏离程度**。偏差越大，预测值偏离真实值越厉害。偏差低意味着能较好地反应训练集中的数据情况。
+  指模型的预测值与真实值的**偏离程度**。偏差越大，预测值偏离真实值越厉害。**<u>偏差低意味着能较好地反应训练集中的数据情况。</u>**
 
-- 方差(Variance)
+- ==方差(Variance)==
 
-  指模型预测值的**离散程度或者变化范围**。方差越大，数据的分布越分散，函数波动越大，泛化能力越差。方差低意味着拟合曲线的稳定性高，波动小。
+  指模型预测值的**离散程度或者变化范围**。方差越大，数据的分布越分散，函数波动越大，泛化能力越差。**<u>方差低意味着拟合曲线的稳定性高，波动小。</u>**
 
 据此，我们有对同一数据的各类拟合情况如下图：
 ![](images/20180112_085630.png)
 
-据上图，高偏差意味着欠拟合，高方差意味着过拟合。
+**==据上图，高偏差意味着欠拟合，高方差意味着过拟合。==**
 
-我们应尽量使得拟合模型处于低方差（较好地拟合数据）状态且同时处于低偏差（较好地预测新值）的状态。
+==我们应尽量使得拟合模型处于低方差（较好地拟合数据）状态且同时处于低偏差（较好地预测新值）的状态。==
 
 避免过拟合的方法有：
 
@@ -356,13 +364,13 @@ exitFlag = 1
 
 $min_\theta\ \dfrac{1}{2m}\sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2 + 1000\cdot\theta_3^2 + 1000\cdot\theta_4^2$
 
-上式中，我们在代价函数中增加了 $\theta_3$、$\theta_4$ 的惩罚项(penalty term) $1000\cdot\theta_3^2 + 1000\cdot\theta_4^2$，如果要最小化代价函数，那么势必需要极大地**减小 $\theta_3$、$\theta_4$**，从而使得假设函数中的 $\theta_3x^3$、$\theta_4x^4$ 这两项的参数非常小，就相当于没有了，假设函数也就**“变得”简单**了，从而在保留各参数的情况下避免了过拟合问题。
+==上式中，我们在代价函数中增加了 $\theta_3$、$\theta_4$ 的惩罚项(penalty term) $1000\cdot\theta_3^2 + 1000\cdot\theta_4^2$，如果要最小化代价函数，那么势必需要极大地**减小 $\theta_3$、$\theta_4$**，从而使得假设函数中的 $\theta_3x^3$、$\theta_4x^4$ 这两项的参数非常小，就相当于没有了，假设函数也就**“变得”简单**了，从而在保留各参数的情况下避免了过拟合问题。==
 
 ![](images/20180114_090054.png)
 
 
 
-根据上面的讨论，有时也无法决定要减少哪个参数，故统一惩罚除了 $\theta_0$ 外的所有参数。
+**<u>根据上面的讨论，有时也无法决定要减少哪个参数，故统一惩罚除了 $\theta_0$ 外的所有参数。</u>**
 
 代价函数：
 
@@ -426,7 +434,7 @@ L =
 
 
 
-前文提到正则化可以解决正规方程法中不可逆的问题，即增加了 $\lambda \cdot L$ 正则化项后，可以保证 $X^TX + \lambda \cdot L$ 可逆(invertible)，即便 $X^TX$ 不可逆(non-invertible)。 
+==前文提到正则化可以解决正规方程法中不可逆的问题，即增加了 $\lambda \cdot L$ 正则化项后，可以保证 $X^TX + \lambda \cdot L$ 可逆(invertible)，即便 $X^TX$ 不可逆(non-invertible)。== 
 
 ## 7.4 逻辑回归正则化(Regularized Logistic Regression)
 
@@ -443,4 +451,3 @@ $\begin{align*} & \text{Repeat}\ \lbrace \newline & \ \ \ \ \theta_0 := \theta_0
 
 
 [^1]: https://en.wikipedia.org/wiki/List_of_algorithms#Optimization_algorithms
-[^2]: week2 - 4.6
